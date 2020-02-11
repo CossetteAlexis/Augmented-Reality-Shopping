@@ -1,0 +1,26 @@
+{% extends "product/base.html" %}
+{% load static %}
+
+<div class="1row mt-3">
+    <div class="col-md-9">
+        {% block content %}
+        <div class="card-group">
+            <div class="row">
+            {% for product in users %}
+                <div class="col-md-3">
+                <div class="card mb-2">
+                    <img class="img-fluid" src="{% static 'images/card4.jpg' %}" />
+                    <div class="card-body">
+                        <h4 class="card-title"> <a href="{{product.id}}">{{product.product_name}}</a> <span class="float-right"><strong>{{product.price}}</strong></span></h4>
+                        <p class="lead">{{product.brand}}</p>
+                        <!--<a href="/products/edit" class="btn btn-primary">Edit</a>
+                        <a href="" class="btn btn-danger">Delete</a> -->
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}
