@@ -2,24 +2,56 @@
 {% load static %}
 {% block content %}
 <!-- <div class="1row mt-3"> -->
-    <div class="col-md-9">
+    <!-- <div class="col-md-9"> -->
         
         <div class="card-group">
             <div class="row">
-            {% for product in products %}
+                {% for product in page_obj %}
                 <div class="col-md-4">
-                <div class="card mb-2">
-                    <img class="img-fluid" src="{% static '/product/images/card4.jpg' %}" alt="atay wala man" >
-                    <div class="card-body">
-                        <h4 class="card-title"> <a href="{{product.id}}">{{product.product_name}}</a> <span class="float-right"><strong>{{product.price}}</strong></span></h4>
-                        <p class="lead">{{product.brand}}</p>
-                        <a href="" class="btn btn-primary">Edit</a>
-                        <a href="" class="btn btn-danger">Delete</a>
+                    <div class="card mb-3 ">
+                        <img class="img-fluid" src="{% static '/product/images/card4.jpg' %}" alt="atay wala man" >
+                        <div class="card-body">
+                            <h4 class="card-title"> <a href="{{product.id}}">{{product.product_name}}</a> <span class="float-right"><strong>{{product.price}}</strong></span></h4>
+                            <p class="lead">{{product.brand}}</p>
+                            <a href="" class="btn btn-primary">Fit</a>
+                            <a href="" class="btn btn-danger">Buy</a>
+                        </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
-            {% endfor %}
-            </div>
+            <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <!-- <span class="step-links"> -->
+                    {% if page_obj.has_previous %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page=1">&laquo; first</a>
+                            
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ page_obj.previous_page_number }}">previous</a>
+                        </li>
+                    {% endif %}
+            
+                    <!-- <span class="current"> -->
+                        <!-- <p>
+                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                        </p> -->
+                    <!-- </span> -->
+            
+                    {% if page_obj.has_next %}
+                        <li class="page-item">
+                            <a class="page-link"  href="?page={{ page_obj.next_page_number }}">next</a>
+                            
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link"  href="?page={{ page_obj.paginator.num_pages }}">last &raquo;</a>
+                        </li>
+                            
+                    {% endif %}
+                <!-- </span> -->
+            </ul>
+            </nav>
         </div>
     </div>
 <!-- </div> -->
