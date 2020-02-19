@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from .models import Product
 from django.core.paginator import Paginator
+import sys
+from subprocess import run,PIPE
 
 """products = [
     {
@@ -35,3 +37,18 @@ def about(request):
 
 def customer(request):
     return render(request, 'product/customer.html')
+
+# def button(request):
+#     return render(request,'prhome.html')
+
+def output(request):
+    data=requests.get("https://www.google.com/")
+    print(data.text)
+    data=data.text
+    return render(request,'product/home.html',{'data':data})
+
+def external(request):
+    inp= request.POST.get('param')
+    out= run([sys.executable,'C:/Users/Cossette/Desktop/test.py',inp],shell=True,stdout=PIPE)
+    print(out)
+    return render(request,'product/home.html',{'data1':out.stdout})

@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'product/main.css' %}">
+    <title></title>
+</head>
+
+<body>
+    
+<header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+        <a class="navbar-brand mr-4" href="/">Django Blog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+            <a class="nav-item nav-link" href="{% url 'product-home' %}">Home</a>
+            <a class="nav-item nav-link" href="{% url 'product-about' %}">About</a>
+            </div>
+            <!-- Navbar Right Side -->
+            <div class="navbar-nav">
+            <a class="nav-item nav-link" href="#">Login</a>
+            <a class="nav-item nav-link" href="#">Register</a>
+            </div>
+        </div>
+        </div>
+    </nav>
+</header>
+
+<main role="main" class="container">
+    <div class="row">
+      
+      <!-- <div class="col-md-3">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="text-center">Menu</h4>
+            </div>
+            <div class="card-body">
+                <div class="list-group">
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle  list-group-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Products
+                        </a>
+                        
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="">Eyeglasses</a>
+                            <a class="dropdown-item" href="">Necklace</a>
+                            <a class="dropdown-item" href="">Hats</a>
+                        </div>
+                    </div>
+                    
+                    <a href="" class="list-group-item list-group-item-action text-center">Add Product</a>
+                    <a href="" class="list-group-item list-group-item-action text-center">Customers</a>
+                    <a href="" class="list-group-item list-group-item-action text-center">Administrators</a>
+                    
+                </div>
+            </div>
+        </div> -->
+      </div>
+      <div class="col-md-9">
+        <!-- {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert"-{{ message.tags }}>
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %} -->
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+</main>
+  
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+</body>
+</html>

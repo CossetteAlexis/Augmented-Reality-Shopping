@@ -3,7 +3,25 @@
 {% block content %}
 <!-- <div class="1row mt-3"> -->
     <!-- <div class="col-md-9"> -->
+        <!-- <form method="post">
+            {% csrf_token %}
+            <button type="submit" name="run_script">Run script</button>
+        </form> -->
         
+        <!-- <button onclick="location.href='{% url 'script' %}'">Execute Script</button> <hr>
+        {% if data %}
+        {{data | safe}}
+        {% endif %} -->
+        <form action="/external/" method="post">
+        {% csrf_token %}
+        Input Text:
+        <input type="text" name="param" required><br><br>
+        {{data_external}}<br><br>
+        {{data1}}
+        <br><br>
+        <input type="submit" value="Execute External Python Script">
+        </form>
+
         <div class="card-group">
             <div class="row">
                 {% for product in page_obj %}
