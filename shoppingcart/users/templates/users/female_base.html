@@ -35,18 +35,49 @@
     </nav>
 </header>
 
-<div class="col-md-9">
-    {% if messages %}
-      {% for message in messages %}
-        <div class="alert alert"-{{ message.tags }}>
-          {{ message }}
+<main role="main" class="container">
+    <div class="row">
+      
+      <div class="col-md-3">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="text-center">Menu</h4>
+            </div>
+            <div class="card-body">
+                <div class="list-group">
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle  list-group-item" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Products
+                        </a>
+                        
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="{% url 'product-female_eyeglasses' %}">Eyeglasses</a>
+                            <a class="dropdown-item" href="{% url 'product-female_necklace' %}">Necklace</a>
+                            <a class="dropdown-item" href="{% url 'product-female_caps' %}">Hats</a>
+                            <a class="dropdown-item" href="{% url 'product-female_earrings' %}">Earrings</a>
+                        </div>
+                    </div>
+                    
+                    <!-- <a href="" class="list-group-item list-group-item-action text-center">Add Product</a>
+                    <a href="" class="list-group-item list-group-item-action text-center">Customers</a>
+                    <a href="" class="list-group-item list-group-item-action text-center">Administrators</a> -->
+                    
+                </div>
+            </div>
         </div>
-      {% endfor %}
-    {% endif %}
-    {% block content %}{% endblock %}
-  </div>
-
-
+      </div>
+      <div class="col-md-9">
+        <!-- {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert"-{{ message.tags }}>
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %} -->
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+</main>
   
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
