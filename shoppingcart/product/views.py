@@ -21,6 +21,9 @@ from subprocess import run,PIPE
 
 
 def home(request):
+    #from blog.models import Post
+    #from django.contrib.auth.models import User
+    #product = Product(product_name='adf',brand='asd',price=11,stock=123,script='asd',image_directory='ad',buyer=user)
     # return render(request, 'product/home.html')
     # context = {
     #     'products': Product.objects.all()
@@ -41,14 +44,3 @@ def customer(request):
 # def button(request):
 #     return render(request,'prhome.html')
 
-def output(request):
-    data=requests.get("https://www.google.com/")
-    print(data.text)
-    data=data.text
-    return render(request,'product/home.html',{'data':data})
-
-def external(request):
-    inp= request.POST.get('param')
-    out= run([sys.executable,'C:/Users/Cossette/Desktop/test.py',inp],shell=True,stdout=PIPE)
-    print(out)
-    return render(request,'product/home.html',{'data1':out.stdout})

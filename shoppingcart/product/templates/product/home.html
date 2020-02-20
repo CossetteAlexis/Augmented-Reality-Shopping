@@ -1,4 +1,4 @@
-{% extends "product/base.html" %}
+{% extends "users/base.html" %}
 {% load static %}
 {% block content %}
 <!-- <div class="1row mt-3"> -->
@@ -12,15 +12,9 @@
         {% if data %}
         {{data | safe}}
         {% endif %} -->
-        <form action="/external/" method="post">
-        {% csrf_token %}
-        Input Text:
-        <input type="text" name="param" required><br><br>
-        {{data_external}}<br><br>
-        {{data1}}
-        <br><br>
-        <input type="submit" value="Execute External Python Script">
-        </form>
+        <!-- <form method="get">
+            <input type="submit" class="btn" value="Click" name="print_btn">
+        </form> -->
 
         <div class="card-group">
             <div class="row">

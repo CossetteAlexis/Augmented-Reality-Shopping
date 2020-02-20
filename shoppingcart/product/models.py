@@ -8,6 +8,8 @@ class Product(models.Model):
     brand = models.CharField(max_length=100)
     price = models.FloatField(max_length=100)
     stock = models.IntegerField()
+    script = models.CharField(max_length=100, default='asd')
+    image_directory = models.CharField(max_length=100, default='abcd')
     date_added = models.DateField(default=timezone.now)
     buyer = models.ForeignKey(User, on_delete=models.CASCADE)
     objects = models.Manager()

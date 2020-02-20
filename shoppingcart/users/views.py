@@ -15,5 +15,8 @@ def register(request):
             form = UserCreationForm()
     return render(request, 'users/register.html', {'form':form})
 
-def cart(request):
-    return render(request, 'users/cart.html')
+def gender_select(request):
+    return render(request, 'users/gender_select.html')
+
+def male(request):
+    return redirect('users-male')
