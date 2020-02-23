@@ -7,7 +7,9 @@
                 {% for product in page_obj %}
                 <div class="col-md-4">
                     <div class="card mb-3 ">
-                        <img class="img-fluid" src="{% static '/product/images/card4.jpg' %}" alt="atay wala man" >
+                        <img class="img-fluid" src="{{ product.image.url }}" alt="atay wala man" >
+                        <!-- <img class="img-fluid" src="{% static '/product/images/card4.jpg' %}" alt="atay wala man" > -->
+                        <!-- <img class="rounded-circle account-img" src="userimage.jpg"> -->
                         <div class="card-body">
                             <h4 class="card-title"> <a href="{{product.id}}">{{product.product_name}}</a> <span class="float-right"><strong>{{product.price}}</strong></span></h4>
                             <p class="lead">{{product.brand}}</p>

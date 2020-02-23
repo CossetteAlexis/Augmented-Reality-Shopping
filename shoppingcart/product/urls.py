@@ -1,8 +1,8 @@
 from django.urls import path
 from . import views  
+from . import ProductListView
 
 urlpatterns = [
-    path('', views.home, name='product-home'),
     path('about/', views.about, name='product-about'),
     path('customer/', views.customer, name='product-customer'),
     path('male_products/', views.male_products, name='product-male_products'),
@@ -13,6 +13,6 @@ urlpatterns = [
     path('female_products/', views.female_products, name='product-female_products'),
     path('female_eyeglasses/', views.female_eyeglasses, name='product-female_eyeglasses'),
     path('female_necklace/', views.female_necklace, name='product-female_necklace'),
-    path('female_caps/', views.female_caps, name='product-female_caps'),
+    path('female_caps/', PostListView().as_view(), name='product-female_caps'),
     path('female_earrings/', views.female_earrings, name='product-female_earrings'),
 ]
