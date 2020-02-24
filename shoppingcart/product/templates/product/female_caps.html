@@ -13,7 +13,7 @@
                         <div class="card-body">
                             <h4 class="card-title"> <a href="{{product.id}}">{{product.product_name}}</a> <span class="float-right"><strong>{{product.price}}</strong></span></h4>
                             <p class="lead">{{product.brand}}</p>
-                            <a href="" class="btn btn-primary">Fit</a>
+                            <a href="{% url 'product-face_detect2' %}" class="btn btn-primary">Fit</a>
                             <a href="" class="btn btn-danger">Buy</a>
                         </div>
                     </div>
