@@ -1,0 +1,20 @@
+{% extends "users/female_base.html" %}
+{% load static %}
+{% block content %}
+    <h1 class="mb-5">Cap Details</h1>
+    <a href="{% url 'product-face_detect' product.id %}" class="btn btn-primary">Fit</a>
+        <div class="card-group">
+            <div class="row">
+               <div class="col-md-6">
+                    <h4>Product Name: {{ product.product_name }}</h4>
+                   <img class="img-fluid" src="{{ product.image.url }}" alt="wala">
+               </div>
+               <div class="col-md-6">
+                   <p class="lead">Description: {{ product.description }}</p>
+               </div>
+            </div>
+            <a href="" class="btn btn-success mt-3">Proceed to Checkout</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}

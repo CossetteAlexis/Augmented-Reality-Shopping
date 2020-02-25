@@ -8,4 +8,7 @@ class UserRegisterForm(UserCreationForm):
         model = User
         fields = ['username','password1','password2']
 
-    
+# class QuantityForm(forms.ModelForm):
+
+#     class Meta:
+#         model = User

@@ -16,12 +16,12 @@
 <header class="site-header">
     <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-        <a class="navbar-brand mr-4" href="/">Django Blog</a>
+        <a class="navbar-brand mr-4" href="{% url 'users-gender_select' %}">Shopping</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarToggle">
-          {% if user.is_authenticated %}
+          <!-- {% if user.is_authenticated %}
             <div class="navbar-nav mr-auto">
             <a class="nav-item nav-link" href="{% url 'users-gender_select' %}">Home</a>
             <a class="nav-item nav-link" href="{% url 'product-about' %}">About</a>
@@ -32,7 +32,7 @@
             </div>
           </div>
           {% endif %}
-            <!-- Navbar Right Side -->
+            Navbar Right Side
             <div class="navbar-nav">
             {% if user.is_authenticated %}
               <a class="nav-item nav-link" href="{% url 'cart' %}">Cart</a>
@@ -40,7 +40,7 @@
             {% else %}
               <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
               <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
-            {% endif %}
+            {% endif %} -->
             </div>
         </div>
         </div>

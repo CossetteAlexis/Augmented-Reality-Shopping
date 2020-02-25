@@ -6,6 +6,7 @@ from django.contrib.auth.models import User
 class Product(models.Model):
     product_name = models.CharField(max_length=100)
     brand = models.CharField(max_length=100)
+    description = models.CharField(max_length=100, default='item')
     price = models.FloatField(max_length=100)
     stock = models.IntegerField()
     script = models.CharField(max_length=100, default='asd')
@@ -20,6 +21,7 @@ class Product(models.Model):
 class Male_Eyeglasse(models.Model):
     product_name = models.CharField(max_length=100)
     brand = models.CharField(max_length=100)
+    description = models.CharField(max_length=100, default='item')
     price = models.FloatField(max_length=100)
     stock = models.IntegerField()
     script = models.CharField(max_length=100, default='asd')
@@ -34,6 +36,7 @@ class Male_Eyeglasse(models.Model):
 class Male_Necklace(models.Model):
     product_name = models.CharField(max_length=100)
     brand = models.CharField(max_length=100)
+    description = models.CharField(max_length=100, default='item')
     price = models.FloatField(max_length=100)
     stock = models.IntegerField()
     script = models.CharField(max_length=100, default='asd')
@@ -48,6 +51,7 @@ class Male_Necklace(models.Model):
 class Male_Cap(models.Model):
     product_name = models.CharField(max_length=100)
     brand = models.CharField(max_length=100)
+    description = models.CharField(max_length=100, default='item')
     price = models.FloatField(max_length=100)
     stock = models.IntegerField()
     script = models.CharField(max_length=100, default='asd')
@@ -62,6 +66,7 @@ class Male_Cap(models.Model):
 class Male_Earring(models.Model):
     product_name = models.CharField(max_length=100)
     brand = models.CharField(max_length=100)
+    description = models.CharField(max_length=100, default='item')
     price = models.FloatField(max_length=100)
     stock = models.IntegerField()
     script = models.CharField(max_length=100, default='asd')
@@ -76,6 +81,7 @@ class Male_Earring(models.Model):
 class Female_Eyeglasse(models.Model):
     product_name = models.CharField(max_length=100)
     brand = models.CharField(max_length=100)
+    description = models.CharField(max_length=100, default='item')
     price = models.FloatField(max_length=100)
     stock = models.IntegerField()
     script = models.CharField(max_length=100, default='asd')
@@ -85,11 +91,12 @@ class Female_Eyeglasse(models.Model):
     objects = models.Manager()
 
     def __str__(self):
-        return self.product_name
+        return self.image.url
 
 class Female_Necklace(models.Model):
     product_name = models.CharField(max_length=100)
     brand = models.CharField(max_length=100)
+    description = models.CharField(max_length=100, default='item')
     price = models.FloatField(max_length=100)
     stock = models.IntegerField()
     script = models.CharField(max_length=100, default='asd')
@@ -104,6 +111,7 @@ class Female_Necklace(models.Model):
 class Female_Cap(models.Model):
     product_name = models.CharField(max_length=100)
     brand = models.CharField(max_length=100)
+    description = models.CharField(max_length=100, default='item')
     price = models.FloatField(max_length=100)
     stock = models.IntegerField()
     script = models.CharField(max_length=100, default='asd')
@@ -113,11 +121,12 @@ class Female_Cap(models.Model):
     objects = models.Manager()
 
     def __str__(self):
-        return self.product_name
+        return self.image.url
 
 class Female_Earring(models.Model):
     product_name = models.CharField(max_length=100)
     brand = models.CharField(max_length=100)
+    description = models.CharField(max_length=100, default='item')
     price = models.FloatField(max_length=100)
     stock = models.IntegerField()
     script = models.CharField(max_length=100, default='asd')
