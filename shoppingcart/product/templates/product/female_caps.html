@@ -11,8 +11,12 @@
                         <!-- <img class="img-fluid" src="{% static '/product/images/card4.jpg' %}" alt="atay wala man" > -->
                         <!-- <img class="rounded-circle account-img" src="userimage.jpg"> -->
                         <div class="card-body">
-                            <h4 class="card-title text-primary"> {{ product.product_name }} <span class="float-right"><strong>{{product.price}}</strong></span></h4>
-                            <p class="lead">{{product.brand}}</p>
+                            <h4 class="card-title text-primary"> {{ product.product_name }} 
+                                <span class="float-right"><strong>{{product.price}}</strong></span>
+                            </h4>
+                            <p class="lead">{{product.brand}}
+                                <span class="float-right"><strong>{{product.stock}}</strong></span>
+                            </p>
                             <a href="{% url 'product-face_detect3' product.id %}" class="btn btn-primary">Fit</a>
                             <!-- <a href="{% url 'product-face_detect' product.id %}" class="btn btn-primary">Fit</a> -->
                             <a href="{% url 'product-female_caps_detail' product.id %}" class="btn btn-danger">Buy</a>

@@ -479,9 +479,11 @@ class PrintFemale_CapDetailView(DetailView):
         price = request.POST.get("price", "")
         brand = request.POST.get("brand", "")
         description = request.POST.get("description", "")
+        quantity = request.POST.get("stock", "")
+        id = request.POST.get("id", "")
         
         content = { product_name, price, brand, description }
-        print(content)
+        # print(id)
         # os.system("sudo echo -e '--- Product Details ---\n'> /dev/usb/lp0")
         # os.system("sudo echo -e 'Product Name : "+product_name+"\n'> /dev/usb/lp0")
         # os.system("sudo echo -e 'Brand : "+brand+"\n'> /dev/usb/lp0")
@@ -490,4 +492,18 @@ class PrintFemale_CapDetailView(DetailView):
         # os.system("sudo echo -e '\n\n\n'> /dev/usb/lp0")
         # os.system("sudo echo -e 'Please proceed to cashier for payment\n\n'> /dev/usb/lp0")
         # os.system("sudo echo -e 'Thank you for using IVS Kiosk!\n\n\n\n'> /dev/usb/lp0")
-        return HttpResponse(content)
+
+        
+
+        def updateFemaleCap(request, id):
+            print(id)
+            queryset = Female_Cap.objects.get(id=id)
+            getCap = int(queryset.stock)
+            print(getCap)
+            updateCap = getCap - 1
+            print(updateCap)
+            Female_Cap.objects.select_related().filter(id=id).update(stock=updateCap)
+            
+        updateFemaleCap(request, id)
+
+        return render(request, 'product/thankyou.html')

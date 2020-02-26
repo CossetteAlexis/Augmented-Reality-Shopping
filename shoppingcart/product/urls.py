@@ -46,4 +46,5 @@ urlpatterns = [
     path('product/<int:pk>/', Female_EyeglassesDetailView.as_view(), name='product-female_eyeglasses_detail'),
     path('prints/<int:pk>/', PrintFemale_CapDetailView.as_view(), name='product-prints'),
     path('printss/', PrintFemale_CapDetailView.printss, name='product-printss'),
+    path('thankyou/', PrintFemale_CapDetailView.printss, name='product-thankyou'),
 ]
