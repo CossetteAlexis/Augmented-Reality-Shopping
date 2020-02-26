@@ -20,7 +20,9 @@ from users import views as user_views
 from django.conf import settings
 from django.conf.urls.static import static
 
-
+admin.site.site_header = "Interactive Virtual Shopping"
+admin.site.site_title = "Interactive Virtual Shopping"
+admin.site.index_title = "Interactive Virtual Shopping"
 
 urlpatterns = [
     path('admin/', admin.site.urls),

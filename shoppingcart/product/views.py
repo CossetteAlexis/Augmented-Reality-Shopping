@@ -482,4 +482,12 @@ class PrintFemale_CapDetailView(DetailView):
         
         content = { product_name, price, brand, description }
         print(content)
+        # os.system("sudo echo -e '--- Product Details ---\n'> /dev/usb/lp0")
+        # os.system("sudo echo -e 'Product Name : "+product_name+"\n'> /dev/usb/lp0")
+        # os.system("sudo echo -e 'Brand : "+brand+"\n'> /dev/usb/lp0")
+        # os.system("sudo echo -e 'Price : "+price+"\n'> /dev/usb/lp0")
+        # os.system("sudo echo -e 'Description : "+description+"\n'> /dev/usb/lp0")
+        # os.system("sudo echo -e '\n\n\n'> /dev/usb/lp0")
+        # os.system("sudo echo -e 'Please proceed to cashier for payment\n\n'> /dev/usb/lp0")
+        # os.system("sudo echo -e 'Thank you for using IVS Kiosk!\n\n\n\n'> /dev/usb/lp0")
         return HttpResponse(content)
