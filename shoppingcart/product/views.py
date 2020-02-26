@@ -21,6 +21,7 @@ from django.views import generic
 from django.views.generic.edit import CreateView, DeleteView
 from django.views.generic import(TemplateView, ListView, DetailView, CreateView, UpdateView, DeleteView)
 from django.shortcuts import redirect
+import os
 import sqlite3
 """products = [
     {
@@ -205,6 +206,7 @@ class VideoCamera(object):
 
             key = cv2.waitKey(1)
             if key == 27:
+                cap.release()
                 break
         return redirect('/gender_select')
 
@@ -288,6 +290,7 @@ class VideoCamera(object):
             cv2.imshow('Hat & glasses',im)
             key = cv2.waitKey(1) & 0xff
             if key == 27:  # The Esc key
+                webcam.release()
                 break
     def face_detect4(request, pk):
         import cv2
@@ -370,6 +373,7 @@ class VideoCamera(object):
             cv2.imshow('Hat & glasses',im)
             key = cv2.waitKey(1) & 0xff
             if key == 27:  # The Esc key
+                webcam.release()
                 break
 
 @gzip.gzip_page
@@ -378,32 +382,6 @@ def face_detect2(request):
 
 def video(request):
     return render(request, 'product/video.html')
-
-# class IndexView(generic.ListView):
-#     # name of the object to be used in the index.html
-#     context_object_name = 'product_list'
-#     template_name = 'modelforms/index.html'
- 
-#     def get_queryset(self):
-#         return Product.objects.all()
- 
-# # view for the product entry page
-# class ProductEntry(CreateView):
-#     model = Product
-#     # the fields mentioned below become the entry rows in the generated form
-#     fields = ['product_title', 'product_price', 'product_desc']
- 
-# # view for the product update page
-# class ProductUpdate(UpdateView):
-#     model = Product
-#     # the fields mentioned below become the entyr rows in the update form
-#     fields = ['product_title', 'product_price', 'product_desc']
- 
-# # view for deleting a product entry
-# class ProductDelete(DeleteView):
-#     model = Product
-#     # the delete button forwards to the url mentioned below.
-#     success_url = reverse_lazy('modelforms:index')
 
 class Female_CapListView(ListView):
     model = Female_Cap 
@@ -416,6 +394,11 @@ class Female_CapDetailView(DetailView):
     template_name = 'product/female_caps_detail.html'
     # product_id = Female_Cap.objects.filter(pk=1)
     context_object_name = 'product'
+
+    # def print(request):
+    #     for item in product:
+    #         print(item)
+    #     return render(request, 'product/print.html')
     # ordering = ['-date_added']
 
 class Female_EyeglassesListView(ListView):
@@ -482,3 +465,21 @@ class Male_EyeglassesgDetailView(ListView):
     model = Male_Eyeglasse
 
 
+
+
+class PrintFemale_CapDetailView(DetailView):
+    model = Female_Cap 
+    template_name = 'product/print.html'
+    # product_id = Female_Cap.objects.filter(pk=1)
+    context_object_name = 'product'
+    
+    def printss(request):
+        print(request)
+        product_name = request.POST.get("product_name", "")
+        price = request.POST.get("price", "")
+        brand = request.POST.get("brand", "")
+        description = request.POST.get("description", "")
+        
+        content = { product_name, price, brand, description }
+        print(content)
+        return HttpResponse(content)

@@ -1,0 +1,29 @@
+{% extends "users/top.html" %}
+{% load static %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-6 offset-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h4>Ready to print</h4>
+                </div>
+                <div class="card-body">
+                    
+                    <h4>Product Name: {{ product.product_name }}</h4>
+                    <h4>Price: {{ product.price }}</h4>
+                    <h4>Price: {{ product.brand }}</h4>
+                    <h4>Price: {{ product.description }}</h4>
+                </div>
+            </div>
+            <!-- <a href="{% url 'product-printss' %}" class="btn btn-success mt-2">Print</a> -->
+            <form action="{% url 'product-printss' %}" method="POST" >
+                {% csrf_token %}
+                <input type="hidden" name="product_name" value="{{ product.product_name }}" >
+                <input type="hidden" name="price" value="{{ product.price }}" >
+                <input type="hidden" name="brand" value="{{ product.brand }}" >
+                <input type="hidden" name="description" value="{{ product.description }}" >
+                <button type="submit" >Print</button>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

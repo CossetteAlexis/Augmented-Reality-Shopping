@@ -6,22 +6,21 @@
             <div class="row">
                 {% for product in products %}
                 <div class="col-md-4">
-                    <div class="card mb-3 ">
+                    <div class="card">
                         <img class="img-fluid" src="{{ product.image.url }}" alt="atay wala man tsk" >
                         <!-- <img class="img-fluid" src="{% static '/product/images/card4.jpg' %}" alt="atay wala man" > -->
                         <!-- <img class="rounded-circle account-img" src="userimage.jpg"> -->
                         <div class="card-body">
                             <h4 class="card-title text-primary"> {{ product.product_name }} <span class="float-right"><strong>{{product.price}}</strong></span></h4>
                             <p class="lead">{{product.brand}}</p>
-                            <a href="{% url 'product-face_detect' product.id %}" class="btn btn-primary">Fit</a>
-                            <!-- <a href="{% url 'product-female_caps_detail' product.id %}" class="btn btn-danger">Buy</a> -->
-                            <a href="{% url 'product-face_detect3' product.id %}" class="btn btn-danger">testing</a>
+                            <a href="{% url 'product-face_detect3' product.id %}" class="btn btn-primary">Fit</a>
+                            <!-- <a href="{% url 'product-face_detect' product.id %}" class="btn btn-primary">Fit</a> -->
+                            <a href="{% url 'product-female_caps_detail' product.id %}" class="btn btn-danger">Buy</a>
+                            
                         </div>
                     </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
-    </div>
-<!-- </div> -->
 {% endblock content %}

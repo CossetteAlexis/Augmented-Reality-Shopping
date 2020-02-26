@@ -18,6 +18,7 @@ from .views import Male_NecklaceListView
 from .views import Male_NecklaceDetailView
 from .views import Male_EarringListView
 from .views import Male_EyeglassesgDetailView
+from .views import PrintFemale_CapDetailView
 
 urlpatterns = [
     path('video/', views.video, name='product-video'),
@@ -43,4 +44,6 @@ urlpatterns = [
     path('female_eyeglasses/', Female_EyeglassesListView.as_view(), name='product-female_eyeglasses'),
     path('female_eyeglasses/<int:pk>', Female_EyeglassesDetailView.as_view(), name='product-female_eyeglasses_detail'),
     path('product/<int:pk>/', Female_EyeglassesDetailView.as_view(), name='product-female_eyeglasses_detail'),
+    path('prints/<int:pk>/', PrintFemale_CapDetailView.as_view(), name='product-prints'),
+    path('printss/', PrintFemale_CapDetailView.printss, name='product-printss'),
 ]
