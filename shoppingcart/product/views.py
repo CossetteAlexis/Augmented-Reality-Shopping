@@ -484,6 +484,7 @@ class PrintFemale_CapDetailView(DetailView):
         
         content = { product_name, price, brand, description }
         # print(id)
+        # os.system("sudo chmod a+w /dev/usb/lp0")
         # os.system("sudo echo -e '--- Product Details ---\n'> /dev/usb/lp0")
         # os.system("sudo echo -e 'Product Name : "+product_name+"\n'> /dev/usb/lp0")
         # os.system("sudo echo -e 'Brand : "+brand+"\n'> /dev/usb/lp0")
@@ -503,7 +504,7 @@ class PrintFemale_CapDetailView(DetailView):
             updateCap = getCap - 1
             print(updateCap)
             Female_Cap.objects.select_related().filter(id=id).update(stock=updateCap)
-            
+
         updateFemaleCap(request, id)
 
         return render(request, 'product/thankyou.html')
