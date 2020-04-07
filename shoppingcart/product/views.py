@@ -505,6 +505,15 @@ class PrintFemale_CapDetailView(DetailView):
             print(updateCap)
             Female_Cap.objects.select_related().filter(id=id).update(stock=updateCap)
 
+            
+
         updateFemaleCap(request, id)
 
         return render(request, 'product/thankyou.html')
+
+
+
+
+        # ;laskdjfl
+        # asldfkj
+        # asdlfkj
